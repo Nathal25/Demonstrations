@@ -1,6 +1,7 @@
 package com.example.demostraciones.controller;
 
 
+import com.example.demostraciones.model.Boats;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -12,6 +13,8 @@ public class GameController {
     private AnchorPane anchorBase;
 
     private Polygon testFigure;
+
+    private Boats boat;
 
     private double posMouseX,posMouseY;
     public void initialize(){
@@ -64,6 +67,12 @@ public class GameController {
     @FXML
     void onHandleButtonClic(ActionEvent event) {
         event.getEventType();
+       // boat = new Boats();
+        try {
+            anchorBase.getChildren().add(boat.getBoat1());
+        } catch (Exception e) {
+            System.out.println("Exception: "+e);
+        }
         System.out.println("Hola mundo!");
     }
 }
